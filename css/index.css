@@ -135,19 +135,176 @@ html,
 body {
   height: 100%;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+@media (max-width: 501px) {
+  .container {
+    max-width: 90%;
+  }
+}
 nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: flex-end;
 }
 nav a {
   text-decoration: none;
   font-size: 2rem;
 }
+@media (max-width: 501px) {
+  nav a {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 501px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
 header {
+  width: 60%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+header .banner {
+  align-items: center;
+}
+header .banner h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+header .banner h4 {
+  font-size: 1.5rem;
+}
+header h4 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 501px) {
+  header {
+    width: 95%;
+  }
+}
+section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#intro .introdiv {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 45%;
+}
+#intro .introdiv h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#intro .introdiv p {
+  font-size: 1.5rem;
+}
+@media (max-width: 501px) {
+  #intro .introdiv {
+    width: 90%;
+  }
+}
+#skills {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#skills .skillsleft {
+  background: #00FFFF;
+  width: 45%;
+}
+#skills .skillsleft:hover {
+  background: #00cccc;
+}
+@media (max-width: 501px) {
+  #skills .skillsleft {
+    display: none;
+  }
+}
+#skills .skillsright {
+  text-align: right;
+  border-right: 10px solid lightgrey;
+}
+#skills .skillsright h2 {
+  font-size: 2rem;
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+#skills .skillsright ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#skills .skillsright ul li {
+  font-size: 1.2rem;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+@media (max-width: 501px) {
+  #skills .skillsright {
+    text-align: left;
+  }
+}
+#experience {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+@media (max-width: 501px) {
+  #experience {
+    width: 100%;
+  }
+}
+#experience h2 {
+  font-size: 2rem;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+#experience .column {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#experience .column h4 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-bottom: 27px;
+}
+#experience .column ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#experience .column ul li {
+  margin-top: 2px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
 }
