@@ -1,59 +1,136 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@import './pieces/reset.less';
+@import './pieces/mixins.less';
+.container {
+	.flexbox(column, space-around);
+	align-items: center;
+	max-width: 90%;
+	margin: 0 auto;
+	@media (max-width: 501px) {
+		max-width: 90%;
+	}
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+nav {
+	.margintb(10px, 10px);
+	width: 80%;
+	.flexbox(row, space-around);
+	a {
+		text-decoration: none;
+		font-size: @subheader;
+		@media (max-width: 501px) {
+			.margintb(10px, 10px);
+		}
+	}
+	@media (max-width: 501px) {
+		.flexbox(column, space-around);
+	}
 }
-body {
-	line-height: 1;
+header {
+	width: 60%;
+	.margintb(10px, 10px);
+	.flexbox(column, space-between);
+	align-items: center;
+	.banner {
+		align-items: center;
+		h1 {
+			.margintb(10px, 10px);
+			font-size: @header;
+		}
+		h4 {
+			font-size: @subheadertext;
+		}
+	}
+	h4 {
+		font-size: @subheadertext;
+		.margintb(10px, 10px);
+	}
+	@media (max-width: 501px) {
+		width: 95%;
+	}
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+section {
+	.margintb(10px, 10px);
 }
 
-html, body {
-    height: 100%;
+#intro {
+	.introdiv {
+		.margintb(10px, 15px);
+		width: 45%;
+		h2 {
+			font-size: @subheader;
+			.margintb(10px, 10px);
+		}
+		p {
+			font-size: @subheadertext;
+		}
+		@media (max-width: 501px) {
+			width: 90%;
+		}
+	}
+
 }
 
+#skills {
+	width: 80%;
+	.flexbox(row, space-between);
+	.skillsleft {
+		background: @cyan;
+		width: 45%;
+		&:hover {
+			background: @cyan-hover;
+		}
+		@media (max-width: 501px) {
+			display: none;
+		}
+	}
+
+	.skillsright {
+		text-align: right;
+		border-right: 10px solid lightgrey; //make secondary div for smaller height border
+		h2 {
+			font-size:@subheader;
+			.margintb(7px, 15px);
+		}
+		ul {
+			.flexbox(column, space-around);
+			li {
+				font-size: @normaltext;
+				.margintb(4px, 4px);
+			}
+		}
+		@media (max-width: 501px) {
+			text-align: left;
+		}
+
+	}
+}
+
+#experience {
+	@media (max-width: 501px) {
+		width: 100%;
+	}
+	width: 85%;
+	.flexbox(row, space-between);
+	.margintb(15px, 15px);
+	flex-wrap: wrap;
+	h2 {
+		font-size: @subheader;
+		.margintb(5px, 20px);
+		width: 90%;
+	}
+	.column {
+		width: 32%;
+		.flexbox(column, space-between);
+		h4 {
+			font-size: @subheadertext;
+			.margintb(15px, 27px);
+		}
+		ul {
+			.flexbox(column, space-evenly);
+
+			li {
+				.margintb(2px, 12px);
+				font-size: @normaltext;
+			}
+		}
+	}
+}
